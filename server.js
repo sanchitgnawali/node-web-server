@@ -23,7 +23,7 @@ hbs.registerHelper('screamIt',(text)=>{
 //     res.render('maintainance.hbs');
 // });
 
-app.use(express.static(__dirname+'/public'));
+// app.use(express.static(__dirname+'/public'));
 
 //middleware
 app.use((req,res,next)=>{
@@ -60,6 +60,11 @@ app.get('/bad',(req,res)=>{
     });
 })
 
+app.get('/projects',(req,res)=>{
+    res.render('projects.hbs',{
+        title: 'Project page'
+    })
+});
 
 
 console.log('server is starting');
